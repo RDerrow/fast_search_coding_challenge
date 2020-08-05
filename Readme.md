@@ -1,4 +1,4 @@
-### Customer Point Calculator
+# Customer Point Calculator
 
 ## Overview
 This was a coding challenge that I received from a recruiting firm.
