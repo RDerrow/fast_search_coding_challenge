@@ -12,7 +12,7 @@ Next, it reads data from the "sample_customer_data.csv" file and then finds the 
 Finally, it prints out each customer and how many points each customer has earned.
 
 ## Running
-You can run the application if you have the .NET SDK install by running the command bellow:
+You can run the application if you have the .NET SDK installed by running the following command:
 
 ```bash
     dotnet run fast_search_code_challenge.dll
