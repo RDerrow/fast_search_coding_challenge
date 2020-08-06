@@ -26,7 +26,6 @@ namespace fast_search_code_challenge
                     }
                 }
 
-
                 using (var customerReader = new StreamReader("./SampleData/sample_customer_data.csv")) {
                     var customers = new List<Customer>();
                     while (!customerReader.EndOfStream) {
@@ -37,12 +36,20 @@ namespace fast_search_code_challenge
 
                     customers.ForEach(c => {
                         if (transactionDictionary.ContainsKey(c.id)) {
-                            c.points = PointCalculator.calculatePoints(transactionDictionary[c.id]);
+                            c.transactions = transactionDictionary[c.id];
+                            c.totalPoints = PointUtility.calculateTotalPoints(c.transactions);
                         } else {
                             Console.WriteLine($"*** Customer id: {c.id} does have any transactions");
                         }
 
+                        // Visual seperator for each customer in output
+                        Console.WriteLine("**************************");
+
+                        // Output the total points a customer has earned
                         Console.WriteLine(c);
+
+                        // Output point breakdown per month
+                        Console.WriteLine(PointUtility.calculatePointsPerMonthString(c.transactions));
                     });
                 }
             }
